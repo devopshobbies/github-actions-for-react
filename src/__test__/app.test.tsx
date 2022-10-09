@@ -11,5 +11,5 @@ test("click increase button", () => {
 
     const increasedNumber = screen.getByTestId('increasing-btn').textContent;
 
-    expect(increasedNumber).toBe('count is 2')
+    expect(increasedNumber).toBe('count is 1')
 })
