@@ -4,14 +4,16 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3030",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint --fix --ignore-path .eslintignore --ignore-pattern \"!**/.*\" .",
     "full-lint": "tsc && npm run lint",
     "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
     "husky": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "cypress": "cypress open",
+    "cypress_ci": "cypress run --headless"
   },
   "dependencies": {
     "husky": "^8.0.1",
@@ -30,6 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^5.39.0",
     "@typescript-eslint/parser": "^5.38.1",
     "@vitejs/plugin-react": "^2.1.0",
+    "cypress": "^10.9.0",
     "eslint": "^8.24.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-jest": "^27.1.1",

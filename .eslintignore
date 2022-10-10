@@ -4,3 +4,5 @@ vite.config.ts
 /build
 /src/fileMock.js
 tsconfig.json
+cypress.config.ts
+/cypress
