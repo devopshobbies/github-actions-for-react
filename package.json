@@ -10,7 +10,7 @@
     "lint": "eslint --fix --ignore-path .eslintignore --ignore-pattern \"!**/.*\" .",
     "full-lint": "tsc && npm run lint",
     "prettier": "prettier --check src/**/*.{js,jsx,ts,tsx}",
-    "husky": "husky install",
+    "init-husky": "husky install",
     "test": "jest",
     "cypress": "cypress open",
     "cypress_ci": "cypress run --headless"

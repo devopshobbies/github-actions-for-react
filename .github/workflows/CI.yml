@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -29,9 +29,15 @@ jobs:
       - name: Install dependencies
         run: npm install
       
+      - name: linting
+        run: npm run full-lint
+        
+      - name: jest test
+        run: npm run test
+
       - name: Run the tests and generate coverage report 
         run: npm test -- --coverage
-      
+   
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v1
         with: 
