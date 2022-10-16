@@ -65,7 +65,6 @@ jobs:
         with:
           browser: chrome
           headless: true
-          parallel: true
           start: npm run serve 
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
