@@ -15,9 +15,7 @@ jobs:
     strategy:
       matrix:
         node-version: [16.x]
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout commit
         uses: actions/checkout@v3
 
@@ -31,7 +29,7 @@ jobs:
       
       - name: linting
         run: npm run full-lint
-        
+
       - name: jest test
         run: npm run test
 
@@ -42,5 +40,40 @@ jobs:
         uses: codecov/codecov-action@v1
         with: 
           token: ${{ secrets.CODECOV_TOKEN }}
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [1, 2, 3] # for cypress and parallel test
+        node-version: [16.x]
+    steps:
+      - name: Checkout commit
+        uses: actions/checkout@v3
 
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      
+      - name: install dependency
+        run: npm install 
+      
+      - name: build project
+        run: npm run build
+      
+      - name: e2e test
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          browser: chrome
+          headless: true
+          parallel: true
+          start: npm run serve 
+          wait-on: 'http://localhost:3000'
+          config: video=true,videoUploadOnPasses=false
+
+       - uses: actions/upload-artifact@v1
+          if: always()
+          with:
+            name: cypress-videos
+            path: cypress/videos
 
