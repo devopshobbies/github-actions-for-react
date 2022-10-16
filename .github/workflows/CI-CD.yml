@@ -67,7 +67,7 @@ jobs:
           browser: chrome
           headless: true
           start: npm run serve 
-          wait-on: ${{ env.VITE_DEV_PORT }}
+          wait-on: http://localhost:3000
           wait-on-timeout: 120
           config: video=true,videoUploadOnPasses=false
 
