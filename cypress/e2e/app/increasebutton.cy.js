@@ -1,7 +1,7 @@
 
 describe('basic ui', () => {
     beforeEach( () => {
-        cy.visit('http://localhost:3000')
+        cy.visit(import.meta.env.VITE_DEV_PORT)
         cy.get('[data-testid="increasing-btn"').as('incBtn')
 
 
