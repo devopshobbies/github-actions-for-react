@@ -14,7 +14,9 @@
     "init-husky": "husky install",
     "test": "jest",
     "cypress": "cypress open",
-    "cypress_ci": "cypress run --headless"
+    "cypress_ci": "cypress run --headless",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "husky": "^8.0.1",
@@ -39,6 +41,7 @@
     "eslint-plugin-jest": "^27.1.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
+    "gh-pages": "^4.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.1.2",
     "jest-environment-jsdom": "^29.1.2",
@@ -56,5 +59,6 @@
       ".+\\.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2|svg)$": "<rootDir>/src/fileMock.js",
       "\\.(css|less)$": "identity-obj-proxy"
     }
-  }
+  },
+  "homepage": "https://behnamrhp.github.io/Automation-Reactjs-practice"
 }
