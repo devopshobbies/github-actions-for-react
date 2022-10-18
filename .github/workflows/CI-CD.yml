@@ -41,7 +41,6 @@ jobs:
         with: 
           token: ${{ secrets.CODECOV_TOKEN }}
   build:
-    needs: test
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -79,9 +78,9 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-      strategy:
-        matrix:
-          node-version: [16.x]   
+    strategy:
+      matrix:
+        node-version: [16.x]   
     steps:
       - name: Checkout commit
         uses: actions/checkout@v3
