@@ -16,7 +16,7 @@
     "cypress": "cypress open",
     "cypress_ci": "cypress run --headless",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "husky": "^8.0.1",
