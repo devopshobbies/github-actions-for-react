@@ -5,7 +5,8 @@
 ---
 > You can use this project as the basis for your **CI/CD** Frontend projects by using github actions
 
-> in this project I tried to use all aspects for For CI/CD Frontend
+> We added a pre-commit hook to the Husky and checked Es-ling
+> and in this project I tried to use all aspects For CI/CD Frontend Development
 
 ### **techs**:
 > **eslint**, **prettier**, **jest**, **testing-library**, **cypress e2e**, **husky**, **codecov**, **gh-pages**
